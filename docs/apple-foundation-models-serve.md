@@ -304,6 +304,9 @@ Important details:
 - Streaming tool calls use `delta.tool_calls`.
 - JSON Schema features tested successfully in tool parameters: object,
   properties, required, string enum, and `additionalProperties: false`.
+- Object tool parameter schemas must include a top-level `required` array in
+  this build. Use `"required": []` when no fields are required; omitting it can
+  return `Invalid tool definition`.
 
 Tool-choice values tested:
 

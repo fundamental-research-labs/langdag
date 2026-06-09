@@ -1,6 +1,7 @@
 package openai
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"net/http"
@@ -81,6 +82,60 @@ func TestAppleCompleteRequestShapeAndConversion(t *testing.T) {
 	}
 	if len(resp.Content) != 1 || resp.Content[0].Text != "hello" || resp.Usage.InputTokens != 2 || resp.Usage.OutputTokens != 3 {
 		t.Fatalf("response = %+v", resp)
+	}
+}
+
+func TestAppleCompleteNormalizesMissingRequiredInToolSchema(t *testing.T) {
+	var got map[string]any
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if err := json.NewDecoder(r.Body).Decode(&got); err != nil {
+			t.Fatal(err)
+		}
+		_, _ = w.Write([]byte(`{"id":"1","model":"pcc","choices":[{"message":{"role":"assistant","content":"ok"},"finish_reason":"stop"}]}`))
+	}))
+	defer srv.Close()
+
+	req := &types.CompletionRequest{
+		Model:    "pcc",
+		Messages: []types.Message{{Role: "user", Content: json.RawMessage(`"hi"`)}},
+		Tools: []types.ToolDefinition{{
+			Name:        "outline",
+			Description: "Outline files",
+			InputSchema: json.RawMessage(`{
+				"type": "object",
+				"properties": {
+					"file_path": {"type": "string"},
+					"nested": {
+						"type": "object",
+						"properties": {"name": {"type": "string"}}
+					}
+				}
+			}`),
+		}},
+	}
+
+	if _, err := NewApple(srv.URL).Complete(context.Background(), req); err != nil {
+		t.Fatal(err)
+	}
+
+	tools, ok := got["tools"].([]any)
+	if !ok || len(tools) != 1 {
+		t.Fatalf("tools = %#v, want one tool", got["tools"])
+	}
+	tool := tools[0].(map[string]any)
+	fn := tool["function"].(map[string]any)
+	params := fn["parameters"].(map[string]any)
+	required, ok := params["required"].([]any)
+	if !ok || len(required) != 0 {
+		t.Fatalf("parameters.required = %#v, want empty array", params["required"])
+	}
+	nested := params["properties"].(map[string]any)["nested"].(map[string]any)
+	nestedRequired, ok := nested["required"].([]any)
+	if !ok || len(nestedRequired) != 0 {
+		t.Fatalf("nested.required = %#v, want empty array", nested["required"])
+	}
+	if bytes.Contains(req.Tools[0].InputSchema, []byte(`"required"`)) {
+		t.Fatalf("original request schema was mutated: %s", req.Tools[0].InputSchema)
 	}
 }
 

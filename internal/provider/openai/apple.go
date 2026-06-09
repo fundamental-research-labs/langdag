@@ -93,7 +93,7 @@ func appleHealthModelID(id, name string) string {
 
 // Complete performs a synchronous completion request.
 func (p *AppleProvider) Complete(ctx context.Context, req *types.CompletionRequest) (*types.CompletionResponse, error) {
-	body := buildChatCompletionRequestWithOptions(req, false, nil, chatCompletionRequestOptions{UseMaxCompletionTokens: true})
+	body := buildChatCompletionRequestWithOptions(appleRequestWithNormalizedToolSchemas(req), false, nil, chatCompletionRequestOptions{UseMaxCompletionTokens: true})
 	respBody, err := p.doRequest(ctx, body)
 	if err != nil {
 		return nil, err
@@ -108,7 +108,7 @@ func (p *AppleProvider) Complete(ctx context.Context, req *types.CompletionReque
 
 // Stream performs a streaming completion request.
 func (p *AppleProvider) Stream(ctx context.Context, req *types.CompletionRequest) (<-chan types.StreamEvent, error) {
-	body := buildChatCompletionRequestWithOptions(req, true, nil, chatCompletionRequestOptions{UseMaxCompletionTokens: true})
+	body := buildChatCompletionRequestWithOptions(appleRequestWithNormalizedToolSchemas(req), true, nil, chatCompletionRequestOptions{UseMaxCompletionTokens: true})
 	respBody, err := p.doRequest(ctx, body)
 	if err != nil {
 		return nil, err
@@ -120,6 +120,99 @@ func (p *AppleProvider) Stream(ctx context.Context, req *types.CompletionRequest
 		parseSSEStream(respBody, events)
 	}()
 	return events, nil
+}
+
+func appleRequestWithNormalizedToolSchemas(req *types.CompletionRequest) *types.CompletionRequest {
+	if req == nil || len(req.Tools) == 0 {
+		return req
+	}
+	var copied *types.CompletionRequest
+	for i, tool := range req.Tools {
+		if !tool.IsClientTool() {
+			continue
+		}
+		normalized := appleNormalizeToolSchema(tool.InputSchema)
+		if bytes.Equal(normalized, tool.InputSchema) {
+			continue
+		}
+		if copied == nil {
+			next := *req
+			next.Tools = append([]types.ToolDefinition(nil), req.Tools...)
+			copied = &next
+		}
+		copied.Tools[i].InputSchema = normalized
+	}
+	if copied != nil {
+		return copied
+	}
+	return req
+}
+
+func appleNormalizeToolSchema(raw json.RawMessage) json.RawMessage {
+	var schema any
+	if err := json.Unmarshal(raw, &schema); err != nil {
+		return raw
+	}
+	if !appleNormalizeSchemaValue(schema) {
+		return raw
+	}
+	normalized, err := json.Marshal(schema)
+	if err != nil {
+		return raw
+	}
+	return normalized
+}
+
+func appleNormalizeSchemaValue(value any) bool {
+	switch v := value.(type) {
+	case map[string]any:
+		changed := false
+		if appleSchemaIsObject(v) {
+			if _, ok := v["required"]; !ok {
+				v["required"] = []any{}
+				changed = true
+			}
+		}
+		if props, ok := v["properties"].(map[string]any); ok {
+			for _, child := range props {
+				changed = appleNormalizeSchemaValue(child) || changed
+			}
+		}
+		for _, key := range []string{"$defs", "definitions"} {
+			if defs, ok := v[key].(map[string]any); ok {
+				for _, child := range defs {
+					changed = appleNormalizeSchemaValue(child) || changed
+				}
+			}
+		}
+		if items, ok := v["items"]; ok {
+			changed = appleNormalizeSchemaValue(items) || changed
+		}
+		for _, key := range []string{"allOf", "anyOf", "oneOf"} {
+			if variants, ok := v[key].([]any); ok {
+				for _, child := range variants {
+					changed = appleNormalizeSchemaValue(child) || changed
+				}
+			}
+		}
+		return changed
+	case []any:
+		changed := false
+		for _, child := range v {
+			changed = appleNormalizeSchemaValue(child) || changed
+		}
+		return changed
+	default:
+		return false
+	}
+}
+
+func appleSchemaIsObject(schema map[string]any) bool {
+	if typ, ok := schema["type"].(string); ok && typ == "object" {
+		return true
+	}
+	_, ok := schema["properties"]
+	return ok
 }
 
 func (p *AppleProvider) doRequest(ctx context.Context, body []byte) (io.ReadCloser, error) {
