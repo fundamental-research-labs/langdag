@@ -532,6 +532,16 @@ func (r *DeploymentRouter) discoveredOfferings(deploymentID, onlyCanonical, nati
 			out = append(out, r.syntheticOfferingFromModelInfo(deployment, canonicalID, model.ID, model))
 		}
 		return out
+	case "apple-local":
+		var out []*models.ModelOfferingV1
+		for _, model := range adapter.Provider.Models() {
+			canonicalID := syntheticCanonicalModelID(deployment, model.ID)
+			if onlyCanonical != "" && canonicalID != onlyCanonical && model.ID != onlyCanonical {
+				continue
+			}
+			out = append(out, r.syntheticOfferingFromModelInfo(deployment, canonicalID, model.ID, model))
+		}
+		return out
 	}
 	return nil
 }
@@ -553,7 +563,7 @@ func (r *DeploymentRouter) syntheticOffering(deployment *models.DeploymentV1, ca
 		Deployment:  deployment,
 		APIProtocol: deployment.APIProtocol,
 	}
-	if deployment.ID == "ollama-local" {
+	if deployment.ID == "ollama-local" || deployment.ID == "apple-local" {
 		offering.Pricing = models.PricingV1{
 			Status:     models.PricingFree,
 			Currency:   "USD",

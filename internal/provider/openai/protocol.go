@@ -23,7 +23,7 @@ type chatCompletionRequest struct {
 	Temperature         *float64         `json:"temperature,omitempty"`
 	Stop                []string         `json:"stop,omitempty"`
 	Tools               []requestTool    `json:"tools,omitempty"`
-	Stream              bool             `json:"stream,omitempty"`
+	Stream              bool             `json:"stream"`
 	StreamOptions       *streamOptions   `json:"stream_options,omitempty"`
 	Think               *bool            `json:"think,omitempty"`
 	ReasoningEffort     string           `json:"reasoning_effort,omitempty"`

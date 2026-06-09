@@ -252,6 +252,9 @@ var providerRegistry = map[string]providerFactory{
 	"ollama": func(_ context.Context, c *config.Config) (provider.Provider, error) {
 		return openaiprovider.NewOllama(c.Providers.Ollama.BaseURL), nil
 	},
+	"apple": func(_ context.Context, c *config.Config) (provider.Provider, error) {
+		return openaiprovider.NewApple(c.Providers.Apple.BaseURL), nil
+	},
 	"gemini": newGeminiProvider,
 	"gemma":  newGeminiProvider,
 	"gemini-vertex": func(ctx context.Context, c *config.Config) (provider.Provider, error) {
@@ -481,6 +484,8 @@ func createDeploymentAdapter(ctx context.Context, deploymentID string, appConfig
 		prov = openaiprovider.NewOpenRouter(cfg.APIKey, cfg.BaseURL)
 	case "ollama-local":
 		prov = openaiprovider.NewOllama(cfg.BaseURL)
+	case "apple-local":
+		prov = openaiprovider.NewApple(cfg.BaseURL)
 	default:
 		return provider.DeploymentAdapter{}, fmt.Errorf("unknown deployment: %s", deploymentID)
 	}
@@ -558,6 +563,10 @@ func apiDeploymentConfigForID(deploymentID string, appConfig *config.Config) con
 	case "ollama-local":
 		if cfg.BaseURL == "" {
 			cfg.BaseURL = appConfig.Providers.Ollama.BaseURL
+		}
+	case "apple-local":
+		if cfg.BaseURL == "" {
+			cfg.BaseURL = appConfig.Providers.Apple.BaseURL
 		}
 	}
 	return cfg

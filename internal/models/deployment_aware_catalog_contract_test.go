@@ -31,6 +31,7 @@ func TestCatalogV1ReferenceValidatesAndCompiles(t *testing.T) {
 		"grok-direct",
 		"openrouter",
 		"ollama-local",
+		"apple-local",
 	}
 	for _, deploymentID := range wantDeployments {
 		if compiled.DeploymentsByID[deploymentID] == nil {
@@ -99,6 +100,15 @@ func TestCatalogV1ReferenceValidatesAndCompiles(t *testing.T) {
 	}
 	if canonicalID, ok := compiled.CanonicalModelForAliasOrID("gemini/gemini-2.5-pro"); !ok || canonicalID != "google/gemini-2.5-pro" {
 		t.Fatalf("model-level alias resolved to %q/%v, want google/gemini-2.5-pro", canonicalID, ok)
+	}
+}
+
+func TestReferenceCatalogHasNoStaticAppleOfferings(t *testing.T) {
+	catalog := ReferenceCatalogV1()
+	for _, offering := range catalog.Offerings {
+		if offering.DeploymentID == "apple-local" {
+			t.Fatalf("reference catalog must not include static Apple offering: %+v", offering)
+		}
 	}
 }
 
@@ -234,8 +244,19 @@ func TestDeploymentBindingsRecordCostSourceAudit(t *testing.T) {
 			t.Fatalf("binding %q missing ResponseCostSource audit", binding.DeploymentID)
 		}
 	}
-	if bindings[len(bindings)-1].DeploymentID != "ollama-local" || bindings[len(bindings)-1].ResponseCostSource != ResponseCostLocalFree {
-		t.Fatalf("ollama-local should be audited as local/free, got %+v", bindings[len(bindings)-1])
+	for _, deploymentID := range []string{"ollama-local", "apple-local"} {
+		found := false
+		for _, binding := range bindings {
+			if binding.DeploymentID == deploymentID {
+				found = true
+				if binding.ResponseCostSource != ResponseCostLocalFree {
+					t.Fatalf("%s should be audited as local/free, got %+v", deploymentID, binding)
+				}
+			}
+		}
+		if !found {
+			t.Fatalf("%s binding missing", deploymentID)
+		}
 	}
 }
 

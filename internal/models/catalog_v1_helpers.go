@@ -28,6 +28,7 @@ func NormalizeCatalogV1(catalog *CatalogV1) {
 	if catalog == nil {
 		return
 	}
+	mergeReferenceRuntimePlaceholdersV1(catalog)
 	normalizeKnownDeploymentProtocolsV1(catalog)
 	for _, provider := range catalog.Providers {
 		if provider != nil {

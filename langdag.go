@@ -108,7 +108,7 @@ type Config struct {
 	StoragePath string
 
 	// Provider is the default LLM provider to use.
-	// Valid values: "anthropic", "openai", "gemini", "grok", "openrouter", "ollama",
+	// Valid values: "anthropic", "openai", "gemini", "grok", "openrouter", "ollama", "apple",
 	// "anthropic-vertex", "anthropic-bedrock", "openai-azure", "gemini-vertex"
 	// "gemma" is accepted as an alias for "gemini".
 	// Defaults to "anthropic"
@@ -144,6 +144,9 @@ type Config struct {
 
 	// OllamaConfig holds Ollama-specific config (local LLM server).
 	OllamaConfig *OllamaConfig
+
+	// AppleConfig holds Apple Foundation Models config (local fm serve bridge).
+	AppleConfig *AppleConfig
 
 	// ModelCatalog is the deployment-aware catalog used for canonical model
 	// resolution. Defaults to the embedded catalog generated from the published
@@ -223,6 +226,11 @@ type BedrockConfig struct {
 // Ollama is a local LLM server that provides an OpenAI-compatible API.
 type OllamaConfig struct {
 	// BaseURL is the Ollama server address (e.g., "http://localhost:11434" or "http://100.93.184.1:11434")
+	BaseURL string
+}
+
+// AppleConfig holds Apple Foundation Models configuration.
+type AppleConfig struct {
 	BaseURL string
 }
 
@@ -919,6 +927,16 @@ func createSingleProvider(ctx context.Context, name string, cfg Config) (interna
 		}
 		return openaiprovider.NewOllama(baseURL), nil
 
+	case "apple":
+		baseURL := ""
+		if cfg.AppleConfig != nil {
+			baseURL = cfg.AppleConfig.BaseURL
+		}
+		if baseURL == "" {
+			baseURL = os.Getenv("APPLE_FM_BASE_URL")
+		}
+		return openaiprovider.NewApple(baseURL), nil
+
 	default:
 		return nil, fmt.Errorf("langdag: unknown provider: %s", name)
 	}
@@ -973,6 +991,8 @@ func createDeploymentAdapter(ctx context.Context, deploymentID string, cfg Confi
 		prov = openaiprovider.NewOpenRouter(deploymentCfg.APIKey, deploymentCfg.BaseURL)
 	case "ollama-local":
 		prov = openaiprovider.NewOllama(deploymentCfg.BaseURL)
+	case "apple-local":
+		prov = openaiprovider.NewApple(deploymentCfg.BaseURL)
 	default:
 		return internalprovider.DeploymentAdapter{}, fmt.Errorf("langdag: unknown deployment: %s", deploymentID)
 	}
@@ -1082,7 +1102,9 @@ func deploymentIDForProviderName(providerName string) string {
 		return "grok-direct"
 	case "ollama":
 		return "ollama-local"
-	case "anthropic-direct", "anthropic-bedrock", "anthropic-vertex", "openai-direct", "openai-azure", "gemini-direct", "gemini-vertex", "grok-direct", "openrouter", "ollama-local":
+	case "apple":
+		return "apple-local"
+	case "anthropic-direct", "anthropic-bedrock", "anthropic-vertex", "openai-direct", "openai-azure", "gemini-direct", "gemini-vertex", "grok-direct", "openrouter", "ollama-local", "apple-local":
 		return providerName
 	default:
 		return ""
@@ -1196,6 +1218,11 @@ func deploymentConfigForID(deploymentID string, cfg Config) DeploymentConfig {
 			out.BaseURL = cfg.OllamaConfig.BaseURL
 		}
 		applyEnv(&out.BaseURL, "OLLAMA_BASE_URL")
+	case "apple-local":
+		if out.BaseURL == "" && cfg.AppleConfig != nil {
+			out.BaseURL = cfg.AppleConfig.BaseURL
+		}
+		applyEnv(&out.BaseURL, "APPLE_FM_BASE_URL")
 	}
 	return out
 }

@@ -399,7 +399,7 @@ func (c *CatalogV1) LookupModel(modelID string) (ModelPricing, string, bool) {
 	if err != nil {
 		return ModelPricing{}, "", false
 	}
-	for _, provider := range []string{"anthropic", "anthropic-bedrock", "anthropic-vertex", "openai", "openai-azure", "gemini", "gemini-vertex", "grok", "openrouter", "ollama"} {
+	for _, provider := range []string{"anthropic", "anthropic-bedrock", "anthropic-vertex", "openai", "openai-azure", "gemini", "gemini-vertex", "grok", "openrouter", "ollama", "apple"} {
 		for _, deploymentID := range legacyProviderDeploymentsV1(provider) {
 			for _, offering := range compiled.OfferingsByDeployment[deploymentID] {
 				if offering.NativeModelID == modelID || offering.CanonicalModelID == modelID {
@@ -433,6 +433,8 @@ func legacyProviderDeploymentsV1(provider string) []string {
 		return []string{"openrouter"}
 	case "ollama":
 		return []string{"ollama-local"}
+	case "apple":
+		return []string{"apple-local"}
 	default:
 		return nil
 	}

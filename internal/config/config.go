@@ -40,6 +40,7 @@ type ProvidersConfig struct {
 	Grok       ProviderConfig     `mapstructure:"grok"`
 	OpenRouter ProviderConfig     `mapstructure:"openrouter"`
 	Ollama     ProviderConfig     `mapstructure:"ollama"`
+	Apple      ProviderConfig     `mapstructure:"apple"`
 	Mock       MockProviderConfig `mapstructure:"mock"`
 
 	// Cloud platform variants
@@ -186,6 +187,7 @@ func Load() (*Config, error) {
 	v.BindEnv("providers.openrouter.api_key", "OPENROUTER_API_KEY")
 	v.BindEnv("providers.openrouter.base_url", "OPENROUTER_BASE_URL")
 	v.BindEnv("providers.ollama.base_url", "OLLAMA_BASE_URL")
+	v.BindEnv("providers.apple.base_url", "APPLE_FM_BASE_URL")
 	v.BindEnv("providers.mock.mode", "LANGDAG_MOCK_MODE")
 	v.BindEnv("providers.mock.fixed_response", "LANGDAG_MOCK_RESPONSE")
 	v.BindEnv("providers.mock.delay", "LANGDAG_MOCK_DELAY")

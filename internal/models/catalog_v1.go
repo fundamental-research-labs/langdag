@@ -476,6 +476,15 @@ func DeploymentBindingsV1() []DeploymentBindingV1 {
 			NativeModelIDSource: NativeModelIDDiscovered,
 			ResponseCostSource:  ResponseCostLocalFree,
 		},
+		{
+			DeploymentID:        "apple-local",
+			ProviderID:          "apple",
+			APIProtocolID:       "openai-chat-completions",
+			AdapterConstructor:  "openai.NewApple",
+			CredentialFields:    []string{"base_url"},
+			NativeModelIDSource: NativeModelIDDiscovered,
+			ResponseCostSource:  ResponseCostLocalFree,
+		},
 	}
 }
 
@@ -496,6 +505,7 @@ func ReferenceCatalogV1() *CatalogV1 {
 			"z-ai":       {ID: "z-ai", Name: "Z.AI", Provenance: observed},
 			"openrouter": {ID: "openrouter", Name: "OpenRouter", HomepageURL: "https://openrouter.ai", Provenance: observed},
 			"ollama":     {ID: "ollama", Name: "Ollama", HomepageURL: "https://ollama.com", Provenance: observed},
+			"apple":      {ID: "apple", Name: "Apple", HomepageURL: "https://developer.apple.com", Provenance: observed},
 		},
 		APIProtocols: map[string]*APIProtocolV1{
 			"anthropic-messages":      {ID: "anthropic-messages", Name: "Anthropic Messages", Provenance: observed},
@@ -522,6 +532,12 @@ func ReferenceCatalogV1() *CatalogV1 {
 			},
 			"ollama/llama3.1:8b": {
 				ID: "ollama/llama3.1:8b", ProviderID: "ollama", Name: "llama3.1:8b", Provenance: observed,
+			},
+			"apple/system": {
+				ID: "apple/system", ProviderID: "apple", Name: "Apple system", Provenance: observed,
+			},
+			"apple/pcc": {
+				ID: "apple/pcc", ProviderID: "apple", Name: "Apple Private Cloud Compute", Provenance: observed,
 			},
 		},
 		Offerings: []ModelOfferingV1{
@@ -631,6 +647,8 @@ func deploymentFromBindingV1(binding DeploymentBindingV1, provenance *Provenance
 		env = append(env, EnvFallbackV1{Field: "api_key", Env: []string{"OPENROUTER_API_KEY"}}, EnvFallbackV1{Field: "base_url", Env: []string{"OPENROUTER_BASE_URL"}})
 	case "ollama-local":
 		env = append(env, EnvFallbackV1{Field: "base_url", Env: []string{"OLLAMA_BASE_URL"}})
+	case "apple-local":
+		env = append(env, EnvFallbackV1{Field: "base_url", Env: []string{"APPLE_FM_BASE_URL"}})
 	case "anthropic-bedrock":
 		env = append(env, EnvFallbackV1{Field: "region", Env: []string{"AWS_REGION"}})
 	case "anthropic-vertex", "gemini-vertex":
@@ -674,6 +692,8 @@ func deploymentDisplayNameV1(id string) string {
 		return "OpenRouter"
 	case "ollama-local":
 		return "Ollama local"
+	case "apple-local":
+		return "Apple Foundation Models local"
 	default:
 		return id
 	}
@@ -1417,6 +1437,7 @@ func mergeReferenceDynamicPlaceholdersV1(catalog *CatalogV1) {
 	if catalog == nil {
 		return
 	}
+	ensureReferencePlaceholderMapsV1(catalog)
 	reference := ReferenceCatalogV1()
 	for id, provider := range reference.Providers {
 		if catalog.Providers[id] == nil {
@@ -1437,7 +1458,7 @@ func mergeReferenceDynamicPlaceholdersV1(catalog *CatalogV1) {
 		}
 	}
 	for id, model := range reference.Models {
-		if model.ProviderID != "z-ai" && model.ProviderID != "ollama" {
+		if model.ProviderID != "z-ai" && model.ProviderID != "ollama" && model.ProviderID != "apple" {
 			continue
 		}
 		if catalog.Models[id] == nil {
@@ -1466,6 +1487,56 @@ func mergeReferenceDynamicPlaceholdersV1(catalog *CatalogV1) {
 	}
 }
 
+func mergeReferenceRuntimePlaceholdersV1(catalog *CatalogV1) {
+	if catalog == nil {
+		return
+	}
+	ensureReferencePlaceholderMapsV1(catalog)
+	reference := ReferenceCatalogV1()
+	for id, provider := range reference.Providers {
+		if catalog.Providers[id] == nil {
+			copyProvider := *provider
+			catalog.Providers[id] = &copyProvider
+		}
+	}
+	for id, protocol := range reference.APIProtocols {
+		if catalog.APIProtocols[id] == nil {
+			copyProtocol := *protocol
+			catalog.APIProtocols[id] = &copyProtocol
+		}
+	}
+	for id, deployment := range reference.Deployments {
+		if catalog.Deployments[id] == nil {
+			copyDeployment := *deployment
+			catalog.Deployments[id] = &copyDeployment
+		}
+	}
+	for id, model := range reference.Models {
+		if model.ProviderID != "apple" {
+			continue
+		}
+		if catalog.Models[id] == nil {
+			copyModel := *model
+			catalog.Models[id] = &copyModel
+		}
+	}
+}
+
+func ensureReferencePlaceholderMapsV1(catalog *CatalogV1) {
+	if catalog.Providers == nil {
+		catalog.Providers = map[string]*ProviderV1{}
+	}
+	if catalog.APIProtocols == nil {
+		catalog.APIProtocols = map[string]*APIProtocolV1{}
+	}
+	if catalog.Deployments == nil {
+		catalog.Deployments = map[string]*DeploymentV1{}
+	}
+	if catalog.Models == nil {
+		catalog.Models = map[string]*ModelV1{}
+	}
+}
+
 func legacyDeploymentAndOwnerV1(provider string) (deploymentID string, ownerProviderID string) {
 	switch provider {
 	case "anthropic":
@@ -1488,6 +1559,8 @@ func legacyDeploymentAndOwnerV1(provider string) (deploymentID string, ownerProv
 		return "openrouter", "openrouter"
 	case "ollama":
 		return "ollama-local", "ollama"
+	case "apple":
+		return "apple-local", "apple"
 	default:
 		return "", ""
 	}

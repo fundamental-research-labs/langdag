@@ -701,6 +701,30 @@ func TestDeploymentRouterOllamaDiscoveryFallback(t *testing.T) {
 	}
 }
 
+func TestDeploymentRouterAppleDiscoveryFallback(t *testing.T) {
+	apple := &captureProvider{
+		name:   "apple",
+		models: []types.ModelInfo{{ID: "system", Name: "Apple system"}},
+	}
+	router := newTestDeploymentRouter(t, map[string]DeploymentAdapter{
+		"apple-local": deploymentAdapter("apple-local", apple),
+	}, RoutingPolicy{})
+
+	resp, err := router.Complete(context.Background(), &types.CompletionRequest{Model: "apple/system"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if apple.lastReq.Model != "system" {
+		t.Fatalf("native model = %q, want system", apple.lastReq.Model)
+	}
+	if resp.ModelResolution == nil || resp.ModelResolution.CanonicalModelID != "apple/system" || resp.ModelResolution.NativeModelID != "system" {
+		t.Fatalf("bad Apple resolution: %+v", resp.ModelResolution)
+	}
+	if resp.PricingSnapshot == nil || resp.PricingSnapshot.Status != types.CostStatusFree {
+		t.Fatalf("Apple pricing snapshot = %+v, want free", resp.PricingSnapshot)
+	}
+}
+
 func TestDeploymentRouterOllamaSlashNativeID(t *testing.T) {
 	ollama := &captureProvider{
 		name:   "ollama",
