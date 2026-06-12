@@ -647,6 +647,9 @@ func serveCatalogWithoutValidation(t *testing.T, catalog *Catalog) *httptest.Ser
 }
 
 func TestFetchLatest(t *testing.T) {
+	t.Setenv("ANTHROPIC_API_KEY", "")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
 	openAIServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`# Models
 
@@ -783,7 +786,108 @@ func TestFetchLatest(t *testing.T) {
 	}
 }
 
+func TestFetchLatest_KeepsAnthropicAPIModelWithUnknownPricing(t *testing.T) {
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+
+	openAIServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`### gpt-4o-2024-08-06
+
+- Context window size: 128000
+- Maximum output tokens: 16384
+
+| Name | Input | Cached input | Output | Unit |
+| --- | --- | --- | --- | --- |
+| gpt-4o-2024-08-06 | 2.5 | 1.25 | 10 | 1M tokens |
+`))
+	}))
+	defer openAIServer.Close()
+
+	anthropicMux := http.NewServeMux()
+	anthropicMux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{
+			"data": [
+				{"id": "claude-unknown-pricing-5", "max_input_tokens": 123000, "max_tokens": 456}
+			],
+			"has_more": false,
+			"last_id": "claude-unknown-pricing-5"
+		}`))
+	})
+	anthropicMux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<table>
+<tr><th>Feature</th><th>Claude Sonnet 4.6</th></tr>
+<tr><td>Claude API ID</td><td>claude-sonnet-4-6</td></tr>
+<tr><td>Pricing</td><td>$3 / input MTok $15 / output MTok</td></tr>
+<tr><td>Context window</td><td>200K tokens</td></tr>
+<tr><td>Max output</td><td>64K tokens</td></tr>
+</table>`))
+	})
+	anthropicServer := httptest.NewServer(anthropicMux)
+	defer anthropicServer.Close()
+
+	geminiMux := http.NewServeMux()
+	geminiMux.HandleFunc("/pricing", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<h3>Gemini 3 Flash Preview</h3><p>Input price $0.50</p><p>Output price $3.00</p>`))
+	})
+	geminiMux.HandleFunc("/models/gemini-3-flash-preview", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html>Input token limit 1,048,576 Output token limit 65,536</html>`))
+	})
+	geminiServer := httptest.NewServer(geminiMux)
+	defer geminiServer.Close()
+
+	grokServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`\"name\":\"grok-3\",\"promptTextTokenPrice\":\"$n30000\",\"completionTextTokenPrice\":\"$n150000\",\"maxPromptLength\":131072`))
+	}))
+	defer grokServer.Close()
+
+	origOpenAI, origAnthropic, origAnthropicAPI, origGemini, origGeminiSpec, origGrok := openAISourceURL, anthropicSourceURL, anthropicModelsAPIURL, geminiSourceURL, geminiSpecBaseURL, grokSourceURL
+	defer func() {
+		openAISourceURL = origOpenAI
+		anthropicSourceURL = origAnthropic
+		anthropicModelsAPIURL = origAnthropicAPI
+		geminiSourceURL = origGemini
+		geminiSpecBaseURL = origGeminiSpec
+		grokSourceURL = origGrok
+	}()
+	openAISourceURL = openAIServer.URL
+	anthropicSourceURL = anthropicServer.URL + "/docs"
+	anthropicModelsAPIURL = anthropicServer.URL + "/v1/models"
+	geminiSourceURL = geminiServer.URL + "/pricing"
+	geminiSpecBaseURL = geminiServer.URL + "/models"
+	grokSourceURL = grokServer.URL
+
+	catalog, err := FetchLatest(context.Background())
+	if err != nil {
+		t.Fatalf("FetchLatest() error: %v", err)
+	}
+	compiled, err := CompileCatalogV1(catalog)
+	if err != nil {
+		t.Fatalf("CompileCatalogV1: %v", err)
+	}
+
+	model := compiled.ModelsByID["anthropic/claude-unknown-pricing-5"]
+	if model == nil {
+		t.Fatal("API-only Anthropic model with unknown pricing was filtered out")
+	}
+	if model.ContextWindow != 123000 || model.MaxOutput != 456 {
+		t.Fatalf("model limits = %d/%d, want 123000/456", model.ContextWindow, model.MaxOutput)
+	}
+	offering, ok := compiled.OfferingForDeployment("anthropic/claude-unknown-pricing-5", "anthropic-direct")
+	if !ok {
+		t.Fatal("direct offering for unknown-pricing Anthropic model not found")
+	}
+	if offering.Pricing.Status != PricingUnknown {
+		t.Fatalf("pricing status = %q, want %q", offering.Pricing.Status, PricingUnknown)
+	}
+	if len(offering.Pricing.MissingDimensions) == 0 {
+		t.Fatal("unknown pricing should include missing dimensions")
+	}
+}
+
 func TestFetchLatest_FiltersIncomplete(t *testing.T) {
+	t.Setenv("ANTHROPIC_API_KEY", "")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
 	// Models without context window or pricing should be filtered
 	openAIServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`### gpt-4o-2024-08-06
@@ -860,6 +964,9 @@ func TestFetchLatest_FiltersIncomplete(t *testing.T) {
 }
 
 func TestFetchLatest_ServerError(t *testing.T) {
+	t.Setenv("ANTHROPIC_API_KEY", "")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
 	errorServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 	}))

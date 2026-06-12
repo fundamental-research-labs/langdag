@@ -99,7 +99,7 @@ func fetchLatestLegacy(ctx context.Context) (*LegacyCatalog, error) {
 		// Filter: require usable pricing information and context_window > 0.
 		var filtered []ModelPricing
 		for _, m := range r.models {
-			hasPrice := m.Free || m.InputPricePer1M > 0 || m.OutputPricePer1M > 0
+			hasPrice := m.Free || m.InputPricePer1M > 0 || m.OutputPricePer1M > 0 || m.AllowUnknownPricing
 			if hasPrice && m.ContextWindow > 0 {
 				filtered = append(filtered, m)
 			}

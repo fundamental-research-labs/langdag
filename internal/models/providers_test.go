@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"net/http/httptest"
+	"sync/atomic"
 	"testing"
 	"time"
 )
@@ -279,6 +280,440 @@ func TestParseAnthropicHTML(t *testing.T) {
 		if m.InputPricePer1M != 3 {
 			t.Errorf("sonnet 4.5 alias input = %f, want 3", m.InputPricePer1M)
 		}
+	}
+}
+
+func TestFetchAnthropicModelsAPIMergesHTMLPricingAndOverrides(t *testing.T) {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		if got := r.Header.Get("x-api-key"); got != "test-key" {
+			http.Error(w, "missing api key", http.StatusBadRequest)
+			return
+		}
+		if got := r.Header.Get("anthropic-version"); got != "2023-06-01" {
+			http.Error(w, "missing version", http.StatusBadRequest)
+			return
+		}
+		if got := r.Header.Get("Accept"); got != "application/json" {
+			http.Error(w, "missing accept", http.StatusBadRequest)
+			return
+		}
+		if got := r.Header.Get("User-Agent"); got != providerUserAgent {
+			http.Error(w, "missing user agent", http.StatusBadRequest)
+			return
+		}
+		if got := r.URL.Query().Get("limit"); got != "1000" {
+			http.Error(w, "missing limit", http.StatusBadRequest)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{
+			"data": [
+				{"id": "claude-fable-5", "type": "model", "display_name": "Claude Fable 5", "max_input_tokens": 1000000, "max_tokens": 128000, "capabilities": {"vision": true}},
+				{"id": "claude-sonnet-4-6", "type": "model", "display_name": "Claude Sonnet 4.6", "max_input_tokens": 1000000, "max_tokens": 128000}
+			],
+			"has_more": false,
+			"last_id": "claude-sonnet-4-6"
+		}`))
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Sonnet 4.6</th><th>Claude Sonnet 4.5</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-sonnet-4-6</td><td>claude-sonnet-4-5-20250929</td></tr>
+<tr><td><strong>Claude API alias</strong></td><td>claude-sonnet-4-6</td><td>claude-sonnet-4-5</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$3 / input MTok<br/>$15 / output MTok</td><td>$3 / input MTok<br/>$15 / output MTok</td></tr>
+<tr><td><strong>Context window</strong></td><td>200K tokens</td><td>200K tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>64K tokens</td><td>64K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+
+	byID := make(map[string]ModelPricing)
+	for _, m := range models {
+		byID[m.ID] = m
+	}
+
+	if m, ok := byID["claude-fable-5"]; !ok {
+		t.Fatal("claude-fable-5 not found")
+	} else {
+		if m.ContextWindow != 1000000 || m.MaxOutput != 128000 {
+			t.Errorf("fable limits = %d/%d, want 1000000/128000", m.ContextWindow, m.MaxOutput)
+		}
+		if m.InputPricePer1M != 10 || m.OutputPricePer1M != 50 {
+			t.Errorf("fable pricing = %f/%f, want 10/50", m.InputPricePer1M, m.OutputPricePer1M)
+		}
+	}
+	if m, ok := byID["claude-sonnet-4-6"]; !ok {
+		t.Fatal("claude-sonnet-4-6 not found")
+	} else {
+		if m.ContextWindow != 1000000 || m.MaxOutput != 128000 {
+			t.Errorf("sonnet API limits = %d/%d, want 1000000/128000", m.ContextWindow, m.MaxOutput)
+		}
+		if m.InputPricePer1M != 3 || m.OutputPricePer1M != 15 {
+			t.Errorf("sonnet pricing = %f/%f, want 3/15", m.InputPricePer1M, m.OutputPricePer1M)
+		}
+	}
+	if _, ok := byID["claude-sonnet-4-5-20250929"]; !ok {
+		t.Error("scraped-only sonnet 4.5 ID not preserved")
+	}
+	if _, ok := byID["claude-sonnet-4-5"]; !ok {
+		t.Error("scraped-only sonnet 4.5 alias not preserved")
+	}
+}
+
+func TestFetchAnthropicModelsAPIBackfillsZeroLimitsFromHTML(t *testing.T) {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{
+			"data": [
+				{"id": "claude-fable-5", "max_input_tokens": 0, "max_tokens": 0}
+			],
+			"has_more": false,
+			"last_id": "claude-fable-5"
+		}`))
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Fable 5</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-fable-5</td></tr>
+<tr><td><strong>Claude API alias</strong></td><td>claude-fable-5</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$10 / $50 per MTok (input / output)</td></tr>
+<tr><td><strong>Context window</strong></td><td>1M tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>128K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "1")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+	if len(models) != 1 {
+		t.Fatalf("got %d models, want 1", len(models))
+	}
+	model := models[0]
+	if model.ID != "claude-fable-5" {
+		t.Fatalf("model ID = %q, want claude-fable-5", model.ID)
+	}
+	if model.ContextWindow != 1000000 || model.MaxOutput != 128000 {
+		t.Fatalf("backfilled limits = %d/%d, want 1000000/128000", model.ContextWindow, model.MaxOutput)
+	}
+	if model.InputPricePer1M != 10 || model.OutputPricePer1M != 50 {
+		t.Fatalf("override pricing = %f/%f, want 10/50", model.InputPricePer1M, model.OutputPricePer1M)
+	}
+}
+
+func TestFetchAnthropicModelsNoKeyUsesHTMLOnly(t *testing.T) {
+	var apiCalls atomic.Int32
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		apiCalls.Add(1)
+		http.Error(w, "should not be called", http.StatusInternalServerError)
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Fable 5</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-fable-5</td></tr>
+<tr><td><strong>Claude API alias</strong></td><td>claude-fable-5</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$10 / $50 per MTok (input / output)</td></tr>
+<tr><td><strong>Context window</strong></td><td>1M tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>128K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+	if apiCalls.Load() != 0 {
+		t.Fatalf("API was called without an API key")
+	}
+	if len(models) != 1 || models[0].ID != "claude-fable-5" {
+		t.Fatalf("models = %#v, want only claude-fable-5", models)
+	}
+	if models[0].InputPricePer1M != 10 || models[0].OutputPricePer1M != 50 {
+		t.Errorf("pricing = %f/%f, want 10/50", models[0].InputPricePer1M, models[0].OutputPricePer1M)
+	}
+}
+
+func TestFetchAnthropicModelsRequiredAPIRejectsMissingKey(t *testing.T) {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Haiku 4.5</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-haiku-4-5</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$1 / input MTok<br/>$5 / output MTok</td></tr>
+<tr><td><strong>Context window</strong></td><td>200K tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>64K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "1")
+
+	_, err := fetchAnthropicModels(context.Background())
+	if err == nil {
+		t.Fatal("fetchAnthropicModels error = nil, want missing API key error")
+	}
+}
+
+func TestFetchAnthropicModelsAPIFailureFallsBackToHTML(t *testing.T) {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		http.Error(w, "api unavailable", http.StatusInternalServerError)
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Opus 4.6</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-opus-4-6</td></tr>
+<tr><td><strong>Claude API alias</strong></td><td>claude-opus-4-6</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$5 / input MTok<br/>$25 / output MTok</td></tr>
+<tr><td><strong>Context window</strong></td><td>1M tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>128K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+	if len(models) != 1 || models[0].ID != "claude-opus-4-6" {
+		t.Fatalf("models = %#v, want only claude-opus-4-6", models)
+	}
+	if models[0].ContextWindow != 1000000 || models[0].MaxOutput != 128000 {
+		t.Errorf("limits = %d/%d, want 1000000/128000", models[0].ContextWindow, models[0].MaxOutput)
+	}
+}
+
+func TestFetchAnthropicModelsRequiredAPIFailureDoesNotFallback(t *testing.T) {
+	var docsCalls atomic.Int32
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		http.Error(w, "api unavailable", http.StatusInternalServerError)
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		docsCalls.Add(1)
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Opus 4.6</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-opus-4-6</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$5 / input MTok<br/>$25 / output MTok</td></tr>
+<tr><td><strong>Context window</strong></td><td>1M tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>128K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "1")
+
+	_, err := fetchAnthropicModels(context.Background())
+	if err == nil {
+		t.Fatal("fetchAnthropicModels error = nil, want API failure")
+	}
+	if docsCalls.Load() != 0 {
+		t.Fatalf("docs fallback calls = %d, want 0 when API is required", docsCalls.Load())
+	}
+}
+
+func TestFetchAnthropicModelsAPIPagination(t *testing.T) {
+	var seenSecondPage atomic.Bool
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		switch afterID := r.URL.Query().Get("after_id"); afterID {
+		case "":
+			if got := r.URL.Query().Get("limit"); got != "1000" {
+				http.Error(w, "missing limit", http.StatusBadRequest)
+				return
+			}
+			w.Write([]byte(`{
+				"data": [
+					{"id": "claude-opus-4-8", "max_input_tokens": 1000000, "max_tokens": 128000}
+				],
+				"has_more": true,
+				"last_id": "claude-opus-4-8"
+			}`))
+		case "claude-opus-4-8":
+			seenSecondPage.Store(true)
+			w.Write([]byte(`{
+				"data": [
+					{"id": "claude-haiku-4-5", "max_input_tokens": 200000, "max_tokens": 64000}
+				],
+				"has_more": false,
+				"last_id": "claude-haiku-4-5"
+			}`))
+		default:
+			http.Error(w, "unexpected cursor", http.StatusBadRequest)
+		}
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+	if !seenSecondPage.Load() {
+		t.Fatal("second page was not fetched")
+	}
+	byID := make(map[string]ModelPricing)
+	for _, m := range models {
+		byID[m.ID] = m
+	}
+	if m, ok := byID["claude-opus-4-8"]; !ok {
+		t.Error("claude-opus-4-8 not found")
+	} else if m.InputPricePer1M != 5 || m.OutputPricePer1M != 25 {
+		t.Errorf("opus override pricing = %f/%f, want 5/25", m.InputPricePer1M, m.OutputPricePer1M)
+	}
+	if m, ok := byID["claude-haiku-4-5"]; !ok {
+		t.Error("claude-haiku-4-5 not found")
+	} else if m.InputPricePer1M != 1 || m.OutputPricePer1M != 5 {
+		t.Errorf("haiku override pricing = %f/%f, want 1/5", m.InputPricePer1M, m.OutputPricePer1M)
+	}
+}
+
+func TestFetchAnthropicModelsAPIEmptyLastIDGuard(t *testing.T) {
+	var apiCalls atomic.Int32
+	mux := http.NewServeMux()
+	mux.HandleFunc("/v1/models", func(w http.ResponseWriter, r *http.Request) {
+		apiCalls.Add(1)
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{
+			"data": [
+				{"id": "claude-unknown-test-model", "max_input_tokens": 123000, "max_tokens": 456}
+			],
+			"has_more": true,
+			"last_id": ""
+		}`))
+	})
+	mux.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<table>
+<tr><th>Feature</th><th>Claude Haiku 4.5</th></tr>
+<tr><td><strong>Claude API ID</strong></td><td>claude-haiku-4-5</td></tr>
+<tr><td><strong>Claude API alias</strong></td><td>claude-haiku-4-5</td></tr>
+<tr><td><strong>Pricing</strong></td><td>$1 / input MTok<br/>$5 / output MTok</td></tr>
+<tr><td><strong>Context window</strong></td><td>200K tokens</td></tr>
+<tr><td><strong>Max output</strong></td><td>64K tokens</td></tr>
+</table>
+</body></html>`))
+	})
+	server := httptest.NewServer(mux)
+	defer server.Close()
+
+	origSource, origAPI := anthropicSourceURL, anthropicModelsAPIURL
+	defer func() {
+		anthropicSourceURL = origSource
+		anthropicModelsAPIURL = origAPI
+	}()
+	anthropicSourceURL = server.URL + "/docs"
+	anthropicModelsAPIURL = server.URL + "/v1/models"
+	t.Setenv("ANTHROPIC_API_KEY", "test-key")
+	t.Setenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API", "")
+
+	models, err := fetchAnthropicModels(context.Background())
+	if err != nil {
+		t.Fatalf("fetchAnthropicModels error: %v", err)
+	}
+	if apiCalls.Load() != 1 {
+		t.Fatalf("API calls = %d, want 1", apiCalls.Load())
+	}
+	if len(models) != 1 || models[0].ID != "claude-haiku-4-5" {
+		t.Fatalf("models = %#v, want HTML fallback model claude-haiku-4-5", models)
+	}
+	if models[0].InputPricePer1M != 1 || models[0].OutputPricePer1M != 5 {
+		t.Errorf("fallback pricing = %f/%f, want 1/5", models[0].InputPricePer1M, models[0].OutputPricePer1M)
 	}
 }
 

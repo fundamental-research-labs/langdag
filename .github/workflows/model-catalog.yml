@@ -54,6 +54,9 @@ jobs:
         run: ./scripts/check-model-catalog.sh
 
       - name: Generate candidate catalog
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LANGDAG_REQUIRE_ANTHROPIC_MODELS_API: "1"
         run: |
           mkdir -p /tmp/langdag-catalog
           go run ./cmd/langdag models --generate --json > /tmp/langdag-catalog/candidate.json

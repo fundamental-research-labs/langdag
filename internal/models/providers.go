@@ -2,10 +2,12 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -18,6 +20,7 @@ var (
 	openAISourceURL       = "https://developers.openai.com/api/docs/models/all"
 	openAIModelDetailsURL = "https://developers.openai.com/api/docs/models"
 	anthropicSourceURL    = "https://platform.claude.com/docs/en/docs/about-claude/models"
+	anthropicModelsAPIURL = "https://api.anthropic.com/v1/models"
 	geminiSourceURL       = "https://ai.google.dev/pricing"
 	geminiSpecBaseURL     = "https://ai.google.dev/gemini-api/docs/models"
 	geminiDeprecationsURL = "https://ai.google.dev/gemini-api/docs/deprecations"
@@ -28,12 +31,14 @@ var (
 
 // --- Shared helpers ---
 
+const providerUserAgent = "langdag-model-catalog/1.0"
+
 func providerHTTPGet(ctx context.Context, url string) (string, error) {
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		return "", err
 	}
-	req.Header.Set("User-Agent", "langdag-model-catalog/1.0")
+	req.Header.Set("User-Agent", providerUserAgent)
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return "", err
@@ -412,14 +417,231 @@ func parseOpenAIText(text string) ([]ModelPricing, error) {
 // --- Anthropic ---
 
 func fetchAnthropicModels(ctx context.Context) ([]ModelPricing, error) {
+	fetchHTMLOnly := func() ([]ModelPricing, error) {
+		body, err := providerHTTPGet(ctx, anthropicSourceURL)
+		if err != nil {
+			return nil, err
+		}
+		models, err := parseAnthropicHTML(body)
+		if err != nil {
+			return nil, err
+		}
+		return mergeAnthropicAPIAndHTML(nil, models), nil
+	}
+
+	apiKey := strings.TrimSpace(os.Getenv("ANTHROPIC_API_KEY"))
+	if apiKey == "" {
+		if requireAnthropicModelsAPI() {
+			return nil, fmt.Errorf("ANTHROPIC_API_KEY is required for Anthropic Models API catalog refresh")
+		}
+		return fetchHTMLOnly()
+	}
+
+	apiModels, err := fetchAnthropicModelsAPI(ctx, apiKey)
+	if err != nil {
+		if requireAnthropicModelsAPI() {
+			return nil, err
+		}
+		return fetchHTMLOnly()
+	}
+
 	body, err := providerHTTPGet(ctx, anthropicSourceURL)
 	if err != nil {
-		return nil, err
+		return mergeAnthropicAPIAndHTML(apiModels, nil), nil
 	}
-	return parseAnthropicHTML(body)
+	htmlModels, err := parseAnthropicHTML(body)
+	if err != nil {
+		return mergeAnthropicAPIAndHTML(apiModels, nil), nil
+	}
+	return mergeAnthropicAPIAndHTML(apiModels, htmlModels), nil
 }
 
 var anthropicPriceRe = regexp.MustCompile(`(?s)\$\s*([\d.]+)\s*/\s*input.*?\$\s*([\d.]+)\s*/\s*output`)
+
+type anthropicModelsAPIResponse struct {
+	Data    []anthropicModelsAPIModel `json:"data"`
+	HasMore bool                      `json:"has_more"`
+	LastID  string                    `json:"last_id"`
+}
+
+type anthropicModelsAPIModel struct {
+	ID             string          `json:"id"`
+	MaxInputTokens int             `json:"max_input_tokens"`
+	MaxTokens      int             `json:"max_tokens"`
+	Capabilities   json.RawMessage `json:"capabilities"`
+	// TODO: Persist capabilities when the catalog schema has a place for them.
+}
+
+func fetchAnthropicModelsAPI(ctx context.Context, apiKey string) ([]ModelPricing, error) {
+	var models []ModelPricing
+	afterID := ""
+
+	for {
+		pageURL, err := anthropicModelsAPIPageURL(afterID)
+		if err != nil {
+			return nil, err
+		}
+
+		req, err := http.NewRequestWithContext(ctx, "GET", pageURL, nil)
+		if err != nil {
+			return nil, err
+		}
+		req.Header.Set("User-Agent", providerUserAgent)
+		req.Header.Set("x-api-key", apiKey)
+		req.Header.Set("anthropic-version", "2023-06-01")
+		req.Header.Set("Accept", "application/json")
+
+		resp, err := http.DefaultClient.Do(req)
+		if err != nil {
+			return nil, err
+		}
+		body, readErr := io.ReadAll(resp.Body)
+		closeErr := resp.Body.Close()
+		if readErr != nil {
+			return nil, readErr
+		}
+		if closeErr != nil {
+			return nil, closeErr
+		}
+		if resp.StatusCode != http.StatusOK {
+			return nil, fmt.Errorf("HTTP %d from %s", resp.StatusCode, pageURL)
+		}
+
+		var page anthropicModelsAPIResponse
+		if err := json.Unmarshal(body, &page); err != nil {
+			return nil, err
+		}
+		for _, apiModel := range page.Data {
+			id := strings.TrimSpace(apiModel.ID)
+			if id == "" {
+				continue
+			}
+			models = append(models, ModelPricing{
+				ID:                  id,
+				ContextWindow:       apiModel.MaxInputTokens,
+				MaxOutput:           apiModel.MaxTokens,
+				AllowUnknownPricing: true,
+			})
+		}
+
+		if !page.HasMore {
+			break
+		}
+		lastID := strings.TrimSpace(page.LastID)
+		if lastID == "" {
+			return nil, fmt.Errorf("Anthropic Models API pagination missing last_id")
+		}
+		if lastID == afterID {
+			return nil, fmt.Errorf("Anthropic Models API pagination repeated last_id %q", lastID)
+		}
+		afterID = lastID
+	}
+
+	if len(models) == 0 {
+		return nil, fmt.Errorf("no models found in Anthropic Models API")
+	}
+	return models, nil
+}
+
+func anthropicModelsAPIPageURL(afterID string) (string, error) {
+	u, err := url.Parse(anthropicModelsAPIURL)
+	if err != nil {
+		return "", err
+	}
+	q := u.Query()
+	q.Set("limit", "1000")
+	if afterID != "" {
+		q.Set("after_id", afterID)
+	} else {
+		q.Del("after_id")
+	}
+	u.RawQuery = q.Encode()
+	return u.String(), nil
+}
+
+func requireAnthropicModelsAPI() bool {
+	return os.Getenv("LANGDAG_REQUIRE_ANTHROPIC_MODELS_API") == "1"
+}
+
+func mergeAnthropicAPIAndHTML(apiModels, htmlModels []ModelPricing) []ModelPricing {
+	htmlByID := make(map[string]ModelPricing, len(htmlModels))
+	for _, model := range htmlModels {
+		htmlByID[model.ID] = model
+	}
+
+	seen := make(map[string]bool, len(apiModels)+len(htmlModels))
+	merged := make([]ModelPricing, 0, len(apiModels)+len(htmlModels))
+	for _, model := range apiModels {
+		if model.ID == "" || seen[model.ID] {
+			continue
+		}
+		if htmlModel, ok := htmlByID[model.ID]; ok {
+			if anthropicHasPricing(htmlModel) {
+				model.InputPricePer1M = htmlModel.InputPricePer1M
+				model.OutputPricePer1M = htmlModel.OutputPricePer1M
+			}
+			if model.ContextWindow == 0 {
+				model.ContextWindow = htmlModel.ContextWindow
+			}
+			if model.MaxOutput == 0 {
+				model.MaxOutput = htmlModel.MaxOutput
+			}
+		}
+		applyAnthropicDirectPriceOverride(&model)
+		merged = append(merged, model)
+		seen[model.ID] = true
+	}
+
+	for _, model := range htmlModels {
+		if model.ID == "" || seen[model.ID] {
+			continue
+		}
+		applyAnthropicDirectPriceOverride(&model)
+		merged = append(merged, model)
+		seen[model.ID] = true
+	}
+	return merged
+}
+
+func anthropicHasPricing(model ModelPricing) bool {
+	return model.InputPricePer1M > 0 || model.OutputPricePer1M > 0
+}
+
+func applyAnthropicDirectPriceOverride(model *ModelPricing) {
+	if model.InputPricePer1M > 0 && model.OutputPricePer1M > 0 {
+		return
+	}
+	input, output, ok := anthropicDirectPriceOverride(model.ID)
+	if !ok {
+		return
+	}
+	model.InputPricePer1M = input
+	model.OutputPricePer1M = output
+}
+
+func anthropicDirectPriceOverride(modelID string) (float64, float64, bool) {
+	switch {
+	case anthropicModelIDMatchesFamily(modelID, "claude-fable-5"),
+		anthropicModelIDMatchesFamily(modelID, "claude-mythos-5"):
+		return 10, 50, true
+	case anthropicModelIDMatchesFamily(modelID, "claude-opus-4-8"),
+		anthropicModelIDMatchesFamily(modelID, "claude-opus-4-7"),
+		anthropicModelIDMatchesFamily(modelID, "claude-opus-4-6"),
+		anthropicModelIDMatchesFamily(modelID, "claude-opus-4-5"):
+		return 5, 25, true
+	case anthropicModelIDMatchesFamily(modelID, "claude-sonnet-4-6"),
+		anthropicModelIDMatchesFamily(modelID, "claude-sonnet-4-5"):
+		return 3, 15, true
+	case anthropicModelIDMatchesFamily(modelID, "claude-haiku-4-5"):
+		return 1, 5, true
+	default:
+		return 0, 0, false
+	}
+}
+
+func anthropicModelIDMatchesFamily(modelID, family string) bool {
+	return modelID == family || strings.HasPrefix(modelID, family+"-")
+}
 
 func parseAnthropicHTML(html string) ([]ModelPricing, error) {
 	tables := parseHTMLTables(html)
