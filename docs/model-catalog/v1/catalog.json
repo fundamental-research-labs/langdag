@@ -1,7 +1,7 @@
 {
   "schema_version": "model-catalog/v1",
-  "generated_at": "2026-06-13T18:48:41.885184852Z",
-  "stale_after": "2026-07-13T18:48:41.885184852Z",
+  "generated_at": "2026-06-13T19:53:11.545731311Z",
+  "stale_after": "2026-07-13T19:53:11.545731311Z",
   "providers": {
     "anthropic": {
       "id": "anthropic",
@@ -503,7 +503,21 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
+      }
+    },
+    "anthropic/claude-haiku-4-5": {
+      "id": "anthropic/claude-haiku-4-5",
+      "provider_id": "anthropic",
+      "name": "claude-haiku-4-5",
+      "context_window": 200000,
+      "max_output": 64000,
+      "aliases": [
+        "claude-haiku-4-5"
+      ],
+      "provenance": {
+        "source": "legacy-provider-keyed-catalog",
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-haiku-4-5-20251001": {
@@ -517,7 +531,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-mythos-5": {
@@ -525,12 +539,13 @@
       "provider_id": "anthropic",
       "name": "claude-mythos-5",
       "context_window": 1000000,
+      "max_output": 128000,
       "aliases": [
         "claude-mythos-5"
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-opus-4-5-20251101": {
@@ -544,7 +559,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-opus-4-6": {
@@ -558,7 +573,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-opus-4-7": {
@@ -572,7 +587,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-opus-4-8": {
@@ -586,7 +601,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-sonnet-4-5-20250929": {
@@ -600,7 +615,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "anthropic/claude-sonnet-4-6": {
@@ -614,7 +629,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "apple/pcc": {
@@ -646,7 +661,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-2.5-flash-lite": {
@@ -660,7 +675,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-2.5-pro": {
@@ -674,7 +689,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-3-flash-preview": {
@@ -688,7 +703,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-3.1-flash-lite": {
@@ -702,7 +717,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-3.1-pro-preview": {
@@ -716,7 +731,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemini-3.5-flash": {
@@ -730,7 +745,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-3-12b-it": {
@@ -744,7 +759,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-3-1b-it": {
@@ -758,7 +773,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-3-27b-it": {
@@ -772,7 +787,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-3-4b-it": {
@@ -786,7 +801,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-4-26b-a4b-it": {
@@ -800,7 +815,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "google/gemma-4-31b-it": {
@@ -814,7 +829,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "ollama/llama3.1:8b": {
@@ -837,7 +852,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/chatgpt-4o-latest": {
@@ -851,7 +866,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/codex-mini-latest": {
@@ -865,7 +880,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/computer-use-preview": {
@@ -879,7 +894,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/computer-use-preview-2025-03-11": {
@@ -893,7 +908,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-3.5-turbo": {
@@ -907,7 +922,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-3.5-turbo-0125": {
@@ -921,7 +936,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-3.5-turbo-1106": {
@@ -935,7 +950,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-3.5-turbo-instruct": {
@@ -949,7 +964,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4": {
@@ -963,7 +978,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4-0314": {
@@ -977,7 +992,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4-0613": {
@@ -991,7 +1006,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4-turbo": {
@@ -1005,7 +1020,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4-turbo-2024-04-09": {
@@ -1019,7 +1034,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4-turbo-preview": {
@@ -1033,7 +1048,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1": {
@@ -1047,7 +1062,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1-2025-04-14": {
@@ -1061,7 +1076,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1-mini": {
@@ -1075,7 +1090,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1-mini-2025-04-14": {
@@ -1089,7 +1104,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1-nano": {
@@ -1103,7 +1118,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.1-nano-2025-04-14": {
@@ -1117,7 +1132,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.5-preview": {
@@ -1131,7 +1146,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4.5-preview-2025-02-27": {
@@ -1145,7 +1160,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o": {
@@ -1159,7 +1174,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-2024-05-13": {
@@ -1173,7 +1188,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-2024-08-06": {
@@ -1187,7 +1202,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-2024-11-20": {
@@ -1201,7 +1216,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-audio-preview": {
@@ -1215,7 +1230,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-audio-preview-2024-10-01": {
@@ -1229,7 +1244,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-audio-preview-2024-12-17": {
@@ -1243,7 +1258,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-audio-preview-2025-06-03": {
@@ -1257,7 +1272,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini": {
@@ -1271,7 +1286,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-2024-07-18": {
@@ -1285,7 +1300,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-audio-preview": {
@@ -1299,7 +1314,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-audio-preview-2024-12-17": {
@@ -1313,7 +1328,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-realtime-preview": {
@@ -1327,7 +1342,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-realtime-preview-2024-12-17": {
@@ -1341,7 +1356,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-search-preview": {
@@ -1355,7 +1370,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-mini-search-preview-2025-03-11": {
@@ -1369,7 +1384,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-realtime-preview": {
@@ -1383,7 +1398,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-realtime-preview-2024-10-01": {
@@ -1397,7 +1412,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-realtime-preview-2024-12-17": {
@@ -1411,7 +1426,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-realtime-preview-2025-06-03": {
@@ -1425,7 +1440,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-search-preview": {
@@ -1439,7 +1454,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-4o-search-preview-2025-03-11": {
@@ -1453,7 +1468,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5": {
@@ -1467,7 +1482,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-2025-08-07": {
@@ -1481,7 +1496,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-chat-latest": {
@@ -1495,7 +1510,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-codex": {
@@ -1509,7 +1524,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-mini": {
@@ -1523,7 +1538,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-mini-2025-08-07": {
@@ -1537,7 +1552,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-nano": {
@@ -1551,7 +1566,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-nano-2025-08-07": {
@@ -1565,7 +1580,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-pro": {
@@ -1579,7 +1594,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5-pro-2025-10-06": {
@@ -1593,7 +1608,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1": {
@@ -1607,7 +1622,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1-2025-11-13": {
@@ -1621,7 +1636,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1-chat-latest": {
@@ -1635,7 +1650,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1-codex": {
@@ -1649,7 +1664,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1-codex-max": {
@@ -1663,7 +1678,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.1-codex-mini": {
@@ -1677,7 +1692,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2": {
@@ -1691,7 +1706,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2-2025-12-11": {
@@ -1705,7 +1720,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2-chat-latest": {
@@ -1719,7 +1734,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2-codex": {
@@ -1733,7 +1748,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2-pro": {
@@ -1747,7 +1762,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.2-pro-2025-12-11": {
@@ -1761,7 +1776,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.3-chat-latest": {
@@ -1775,7 +1790,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.3-codex": {
@@ -1789,7 +1804,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4": {
@@ -1803,7 +1818,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-2026-03-05": {
@@ -1817,7 +1832,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-mini": {
@@ -1831,7 +1846,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-mini-2026-03-17": {
@@ -1845,7 +1860,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-nano": {
@@ -1859,7 +1874,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-nano-2026-03-17": {
@@ -1873,7 +1888,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-pro": {
@@ -1887,7 +1902,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.4-pro-2026-03-05": {
@@ -1901,7 +1916,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.5": {
@@ -1915,7 +1930,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.5-2026-04-23": {
@@ -1929,7 +1944,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.5-pro": {
@@ -1943,7 +1958,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-5.5-pro-2026-04-23": {
@@ -1957,7 +1972,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio": {
@@ -1971,7 +1986,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio-1.5": {
@@ -1985,7 +2000,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio-2025-08-28": {
@@ -1999,7 +2014,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio-mini": {
@@ -2013,7 +2028,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio-mini-2025-10-06": {
@@ -2027,7 +2042,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-audio-mini-2025-12-15": {
@@ -2041,7 +2056,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime": {
@@ -2055,7 +2070,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-1.5": {
@@ -2069,7 +2084,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-2": {
@@ -2083,7 +2098,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-2025-08-28": {
@@ -2097,7 +2112,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-mini": {
@@ -2111,7 +2126,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-mini-2025-10-06": {
@@ -2125,7 +2140,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/gpt-realtime-mini-2025-12-15": {
@@ -2139,7 +2154,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1": {
@@ -2153,7 +2168,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-2024-12-17": {
@@ -2167,7 +2182,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-mini": {
@@ -2181,7 +2196,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-mini-2024-09-12": {
@@ -2195,7 +2210,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-preview": {
@@ -2209,7 +2224,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-preview-2024-09-12": {
@@ -2223,7 +2238,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-pro": {
@@ -2237,7 +2252,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o1-pro-2025-03-19": {
@@ -2251,7 +2266,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3": {
@@ -2265,7 +2280,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-2025-04-16": {
@@ -2279,7 +2294,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-deep-research": {
@@ -2293,7 +2308,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-deep-research-2025-06-26": {
@@ -2307,7 +2322,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-mini": {
@@ -2321,7 +2336,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-mini-2025-01-31": {
@@ -2335,7 +2350,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-pro": {
@@ -2349,7 +2364,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o3-pro-2025-06-10": {
@@ -2363,7 +2378,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o4-mini": {
@@ -2377,7 +2392,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o4-mini-2025-04-16": {
@@ -2391,7 +2406,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o4-mini-deep-research": {
@@ -2405,7 +2420,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "openai/o4-mini-deep-research-2025-06-26": {
@@ -2419,7 +2434,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "xai/grok-4.20-0309-non-reasoning": {
@@ -2432,7 +2447,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "xai/grok-4.20-0309-reasoning": {
@@ -2445,7 +2460,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "xai/grok-4.20-multi-agent-0309": {
@@ -2458,7 +2473,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "xai/grok-4.3": {
@@ -2471,7 +2486,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "xai/grok-build-0.1": {
@@ -2484,7 +2499,7 @@
       ],
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     "z-ai/glm-4.5-air:free": {
@@ -2511,7 +2526,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2523,7 +2538,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2539,7 +2554,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 50
@@ -2548,7 +2563,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2564,7 +2579,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2576,7 +2591,88 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
+      }
+    },
+    {
+      "id": "anthropic-bedrock:anthropic.claude-haiku-4-5-v1:0",
+      "canonical_model_id": "anthropic/claude-haiku-4-5",
+      "deployment_id": "anthropic-bedrock",
+      "native_model_id": "anthropic.claude-haiku-4-5-v1:0",
+      "capabilities": {
+        "server_tools": {
+          "web_search": "unknown"
+        }
+      },
+      "pricing": {
+        "status": "unknown",
+        "currency": "USD",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
+        "missing_dimensions": [
+          "input_tokens",
+          "output_tokens"
+        ],
+        "notes": [
+          "Deployment-specific pricing is not inferred from direct provider pricing."
+        ],
+        "source": "generated-deployment-placeholder"
+      },
+      "provenance": {
+        "source": "generated-from-provider-catalog",
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
+      }
+    },
+    {
+      "id": "anthropic-direct:claude-haiku-4-5",
+      "canonical_model_id": "anthropic/claude-haiku-4-5",
+      "deployment_id": "anthropic-direct",
+      "native_model_id": "claude-haiku-4-5",
+      "capabilities": {
+        "server_tools": {
+          "web_search": "supported"
+        }
+      },
+      "pricing": {
+        "status": "known",
+        "currency": "USD",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
+        "rates_per_1m": {
+          "input_tokens": 1,
+          "output_tokens": 5
+        },
+        "source": "providers"
+      },
+      "provenance": {
+        "source": "legacy-provider-keyed-catalog",
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
+      }
+    },
+    {
+      "id": "anthropic-vertex:claude-haiku-4-5",
+      "canonical_model_id": "anthropic/claude-haiku-4-5",
+      "deployment_id": "anthropic-vertex",
+      "native_model_id": "claude-haiku-4-5",
+      "capabilities": {
+        "server_tools": {
+          "web_search": "unknown"
+        }
+      },
+      "pricing": {
+        "status": "unknown",
+        "currency": "USD",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
+        "missing_dimensions": [
+          "input_tokens",
+          "output_tokens"
+        ],
+        "notes": [
+          "Deployment-specific pricing is not inferred from direct provider pricing."
+        ],
+        "source": "generated-deployment-placeholder"
+      },
+      "provenance": {
+        "source": "generated-from-provider-catalog",
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2592,7 +2688,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2604,7 +2700,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2620,7 +2716,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1,
           "output_tokens": 5
@@ -2629,7 +2725,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2645,7 +2741,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2657,7 +2753,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2673,7 +2769,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2685,7 +2781,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2701,7 +2797,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 50
@@ -2710,7 +2806,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2726,7 +2822,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2738,7 +2834,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2754,7 +2850,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2766,7 +2862,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2782,7 +2878,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 25
@@ -2791,7 +2887,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2807,7 +2903,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2819,7 +2915,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2835,7 +2931,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2847,7 +2943,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2863,7 +2959,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 25
@@ -2872,7 +2968,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2888,7 +2984,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2900,7 +2996,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2916,7 +3012,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2928,7 +3024,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2944,7 +3040,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 25
@@ -2953,7 +3049,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2969,7 +3065,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -2981,7 +3077,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -2997,7 +3093,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3009,7 +3105,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3025,7 +3121,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 25
@@ -3034,7 +3130,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3050,7 +3146,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3062,7 +3158,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3078,7 +3174,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3090,7 +3186,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3106,7 +3202,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 3,
           "output_tokens": 15
@@ -3115,7 +3211,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3131,7 +3227,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3143,7 +3239,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3159,7 +3255,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3171,7 +3267,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3187,7 +3283,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 3,
           "output_tokens": 15
@@ -3196,7 +3292,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3212,7 +3308,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3224,7 +3320,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3240,7 +3336,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.3,
           "output_tokens": 2.5
@@ -3249,7 +3345,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3265,7 +3361,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3277,7 +3373,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3293,7 +3389,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.1,
           "output_tokens": 0.4
@@ -3302,7 +3398,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3318,7 +3414,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3330,7 +3426,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3346,7 +3442,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -3355,7 +3451,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3371,7 +3467,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3383,7 +3479,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3399,7 +3495,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.5,
           "output_tokens": 3
@@ -3408,7 +3504,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3424,7 +3520,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3436,7 +3532,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3452,7 +3548,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.25,
           "output_tokens": 1.5
@@ -3461,7 +3557,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3477,7 +3573,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3489,7 +3585,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3505,7 +3601,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 12
@@ -3514,7 +3610,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3530,7 +3626,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3542,7 +3638,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3558,7 +3654,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.5,
           "output_tokens": 9
@@ -3567,7 +3663,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3583,7 +3679,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -3595,7 +3691,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3611,7 +3707,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3620,7 +3716,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3636,7 +3732,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3645,7 +3741,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3661,7 +3757,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3670,7 +3766,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3686,7 +3782,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3695,7 +3791,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3711,7 +3807,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3720,7 +3816,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3736,7 +3832,7 @@
       "pricing": {
         "status": "free",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0,
           "output_tokens": 0
@@ -3745,7 +3841,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3786,7 +3882,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 30
@@ -3795,7 +3891,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3811,7 +3907,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 15
@@ -3820,7 +3916,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3836,7 +3932,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.5,
           "output_tokens": 6
@@ -3845,7 +3941,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3861,7 +3957,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 3,
           "output_tokens": 12
@@ -3870,7 +3966,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3886,7 +3982,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 3,
           "output_tokens": 12
@@ -3895,7 +3991,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3911,7 +4007,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.5,
           "output_tokens": 1.5
@@ -3920,7 +4016,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3936,7 +4032,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.5,
           "output_tokens": 1.5
@@ -3945,7 +4041,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3961,7 +4057,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.5,
           "output_tokens": 1.5
@@ -3970,7 +4066,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -3986,7 +4082,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.5,
           "output_tokens": 1.5
@@ -3995,7 +4091,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4011,7 +4107,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 60
@@ -4020,7 +4116,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4036,7 +4132,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 60
@@ -4045,7 +4141,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4061,7 +4157,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 60
@@ -4070,7 +4166,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4086,7 +4182,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 30
@@ -4095,7 +4191,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4111,7 +4207,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 30
@@ -4120,7 +4216,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4136,7 +4232,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 30
@@ -4145,7 +4241,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4161,7 +4257,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -4170,7 +4266,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4186,7 +4282,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -4195,7 +4291,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4211,7 +4307,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.4,
           "output_tokens": 1.6
@@ -4220,7 +4316,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4236,7 +4332,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.4,
           "output_tokens": 1.6
@@ -4245,7 +4341,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4261,7 +4357,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.1,
           "output_tokens": 0.4
@@ -4270,7 +4366,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4286,7 +4382,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.1,
           "output_tokens": 0.4
@@ -4295,7 +4391,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4311,7 +4407,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 75,
           "output_tokens": 150
@@ -4320,7 +4416,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4336,7 +4432,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 75,
           "output_tokens": 150
@@ -4345,7 +4441,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4361,7 +4457,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4370,7 +4466,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4386,7 +4482,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4395,7 +4491,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4411,7 +4507,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4420,7 +4516,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4436,7 +4532,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4445,7 +4541,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4461,7 +4557,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4470,7 +4566,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4486,7 +4582,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4495,7 +4591,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4511,7 +4607,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4520,7 +4616,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4536,7 +4632,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4545,7 +4641,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4561,7 +4657,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4570,7 +4666,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4586,7 +4682,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4595,7 +4691,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4611,7 +4707,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4620,7 +4716,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4636,7 +4732,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4645,7 +4741,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4661,7 +4757,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -4670,7 +4766,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4686,7 +4782,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -4695,7 +4791,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4711,7 +4807,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4720,7 +4816,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4736,7 +4832,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.15,
           "output_tokens": 0.6
@@ -4745,7 +4841,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4761,7 +4857,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 20
@@ -4770,7 +4866,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4786,7 +4882,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 20
@@ -4795,7 +4891,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4811,7 +4907,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 20
@@ -4820,7 +4916,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4836,7 +4932,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 20
@@ -4845,7 +4941,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4861,7 +4957,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4870,7 +4966,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4886,7 +4982,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -4895,7 +4991,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4911,7 +5007,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -4920,7 +5016,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4936,7 +5032,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -4945,7 +5041,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4961,7 +5057,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -4970,7 +5066,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -4986,7 +5082,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -4995,7 +5091,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5011,7 +5107,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.25,
           "output_tokens": 2
@@ -5020,7 +5116,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5036,7 +5132,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.25,
           "output_tokens": 2
@@ -5045,7 +5141,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5061,7 +5157,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.05,
           "output_tokens": 0.4
@@ -5070,7 +5166,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5086,7 +5182,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.05,
           "output_tokens": 0.4
@@ -5095,7 +5191,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5111,7 +5207,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 120
@@ -5120,7 +5216,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5136,7 +5232,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 120
@@ -5145,7 +5241,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5161,7 +5257,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -5170,7 +5266,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5186,7 +5282,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -5195,7 +5291,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5211,7 +5307,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -5220,7 +5316,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5236,7 +5332,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -5245,7 +5341,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5261,7 +5357,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 10
@@ -5270,7 +5366,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5286,7 +5382,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.25,
           "output_tokens": 2
@@ -5295,7 +5391,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5311,7 +5407,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5320,7 +5416,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5336,7 +5432,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5345,7 +5441,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5361,7 +5457,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5370,7 +5466,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5386,7 +5482,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5395,7 +5491,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5411,7 +5507,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 21,
           "output_tokens": 168
@@ -5420,7 +5516,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5436,7 +5532,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 21,
           "output_tokens": 168
@@ -5445,7 +5541,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5461,7 +5557,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5470,7 +5566,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5486,7 +5582,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.75,
           "output_tokens": 14
@@ -5495,7 +5591,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5511,7 +5607,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 15
@@ -5520,7 +5616,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5536,7 +5632,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 15
@@ -5545,7 +5641,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5561,7 +5657,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.75,
           "output_tokens": 4.5
@@ -5570,7 +5666,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5586,7 +5682,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.75,
           "output_tokens": 4.5
@@ -5595,7 +5691,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5611,7 +5707,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.2,
           "output_tokens": 1.25
@@ -5620,7 +5716,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5636,7 +5732,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.2,
           "output_tokens": 1.25
@@ -5645,7 +5741,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5661,7 +5757,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 180
@@ -5670,7 +5766,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5686,7 +5782,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 180
@@ -5695,7 +5791,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5711,7 +5807,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 30
@@ -5720,7 +5816,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5736,7 +5832,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 5,
           "output_tokens": 30
@@ -5745,7 +5841,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5761,7 +5857,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 180
@@ -5770,7 +5866,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5786,7 +5882,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 30,
           "output_tokens": 180
@@ -5795,7 +5891,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5811,7 +5907,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -5820,7 +5916,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5836,7 +5932,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -5845,7 +5941,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5861,7 +5957,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2.5,
           "output_tokens": 10
@@ -5870,7 +5966,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5886,7 +5982,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -5895,7 +5991,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5911,7 +6007,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -5920,7 +6016,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5936,7 +6032,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -5945,7 +6041,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5961,7 +6057,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 4,
           "output_tokens": 16
@@ -5970,7 +6066,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -5986,7 +6082,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 4,
           "output_tokens": 16
@@ -5995,7 +6091,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6011,7 +6107,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 4,
           "output_tokens": 24
@@ -6020,7 +6116,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6036,7 +6132,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 4,
           "output_tokens": 16
@@ -6045,7 +6141,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6061,7 +6157,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -6070,7 +6166,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6086,7 +6182,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -6095,7 +6191,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6111,7 +6207,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 0.6,
           "output_tokens": 2.4
@@ -6120,7 +6216,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6136,7 +6232,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 60
@@ -6145,7 +6241,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6161,7 +6257,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 60
@@ -6170,7 +6266,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6186,7 +6282,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6195,7 +6291,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6211,7 +6307,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6220,7 +6316,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6236,7 +6332,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 60
@@ -6245,7 +6341,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6261,7 +6357,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 15,
           "output_tokens": 60
@@ -6270,7 +6366,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6286,7 +6382,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 150,
           "output_tokens": 600
@@ -6295,7 +6391,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6311,7 +6407,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 150,
           "output_tokens": 600
@@ -6320,7 +6416,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6336,7 +6432,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -6345,7 +6441,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6361,7 +6457,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -6370,7 +6466,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6386,7 +6482,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 40
@@ -6395,7 +6491,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6411,7 +6507,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 10,
           "output_tokens": 40
@@ -6420,7 +6516,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6436,7 +6532,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6445,7 +6541,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6461,7 +6557,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6470,7 +6566,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6486,7 +6582,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 20,
           "output_tokens": 80
@@ -6495,7 +6591,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6511,7 +6607,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 20,
           "output_tokens": 80
@@ -6520,7 +6616,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6536,7 +6632,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6545,7 +6641,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6561,7 +6657,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.1,
           "output_tokens": 4.4
@@ -6570,7 +6666,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6586,7 +6682,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -6595,7 +6691,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6611,7 +6707,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 2,
           "output_tokens": 8
@@ -6620,7 +6716,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6636,7 +6732,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 2.5
@@ -6645,7 +6741,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6661,7 +6757,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 2.5
@@ -6670,7 +6766,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6686,7 +6782,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 2.5
@@ -6695,7 +6791,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6711,7 +6807,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1.25,
           "output_tokens": 2.5
@@ -6720,7 +6816,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6736,7 +6832,7 @@
       "pricing": {
         "status": "known",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "rates_per_1m": {
           "input_tokens": 1,
           "output_tokens": 2
@@ -6745,7 +6841,7 @@
       },
       "provenance": {
         "source": "legacy-provider-keyed-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6789,7 +6885,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6798,7 +6894,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6815,7 +6911,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6824,7 +6920,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6841,7 +6937,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6850,7 +6946,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6867,7 +6963,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6876,7 +6972,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6893,7 +6989,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6902,7 +6998,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6919,7 +7015,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6928,7 +7024,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6945,7 +7041,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6954,7 +7050,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6971,7 +7067,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -6980,7 +7076,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -6997,7 +7093,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7006,7 +7102,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7023,7 +7119,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7032,7 +7128,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7049,7 +7145,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7058,7 +7154,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7075,7 +7171,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7084,7 +7180,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7101,7 +7197,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7110,7 +7206,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7127,7 +7223,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7136,7 +7232,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7153,7 +7249,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7162,7 +7258,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7179,7 +7275,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7188,7 +7284,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7205,7 +7301,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7214,7 +7310,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7231,7 +7327,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7240,7 +7336,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7257,7 +7353,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7266,7 +7362,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7283,7 +7379,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7292,7 +7388,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7309,7 +7405,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7318,7 +7414,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7335,7 +7431,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7344,7 +7440,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7361,7 +7457,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7370,7 +7466,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7387,7 +7483,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7396,7 +7492,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7413,7 +7509,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7422,7 +7518,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7439,7 +7535,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7448,7 +7544,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7465,7 +7561,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7474,7 +7570,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7491,7 +7587,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7500,7 +7596,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7517,7 +7613,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7526,7 +7622,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7543,7 +7639,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7552,7 +7648,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7569,7 +7665,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7578,7 +7674,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7595,7 +7691,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7604,7 +7700,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7621,7 +7717,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7630,7 +7726,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7647,7 +7743,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7656,7 +7752,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7673,7 +7769,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7682,7 +7778,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7699,7 +7795,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7708,7 +7804,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7725,7 +7821,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7734,7 +7830,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7751,7 +7847,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7760,7 +7856,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7777,7 +7873,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7786,7 +7882,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7803,7 +7899,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7812,7 +7908,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7829,7 +7925,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7838,7 +7934,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7855,7 +7951,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7864,7 +7960,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7881,7 +7977,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7890,7 +7986,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7907,7 +8003,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7916,7 +8012,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7933,7 +8029,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7942,7 +8038,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7959,7 +8055,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7968,7 +8064,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -7985,7 +8081,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -7994,7 +8090,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8011,7 +8107,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8020,7 +8116,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8037,7 +8133,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8046,7 +8142,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8063,7 +8159,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8072,7 +8168,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8089,7 +8185,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8098,7 +8194,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8115,7 +8211,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8124,7 +8220,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8141,7 +8237,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8150,7 +8246,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8167,7 +8263,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8176,7 +8272,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8193,7 +8289,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8202,7 +8298,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8219,7 +8315,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8228,7 +8324,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8245,7 +8341,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8254,7 +8350,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8271,7 +8367,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8280,7 +8376,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8297,7 +8393,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8306,7 +8402,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8323,7 +8419,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8332,7 +8428,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8349,7 +8445,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8358,7 +8454,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8375,7 +8471,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8384,7 +8480,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8401,7 +8497,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8410,7 +8506,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8427,7 +8523,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8436,7 +8532,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8453,7 +8549,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8462,7 +8558,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8479,7 +8575,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8488,7 +8584,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8505,7 +8601,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8514,7 +8610,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8531,7 +8627,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8540,7 +8636,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8557,7 +8653,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8566,7 +8662,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8583,7 +8679,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8592,7 +8688,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8609,7 +8705,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8618,7 +8714,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8635,7 +8731,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8644,7 +8740,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8661,7 +8757,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8670,7 +8766,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8687,7 +8783,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8696,7 +8792,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8713,7 +8809,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8722,7 +8818,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8739,7 +8835,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8748,7 +8844,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8765,7 +8861,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8774,7 +8870,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8791,7 +8887,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8800,7 +8896,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8817,7 +8913,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8826,7 +8922,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8843,7 +8939,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8852,7 +8948,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8869,7 +8965,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8878,7 +8974,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8895,7 +8991,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8904,7 +9000,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8921,7 +9017,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8930,7 +9026,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8947,7 +9043,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8956,7 +9052,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8973,7 +9069,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -8982,7 +9078,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -8999,7 +9095,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9008,7 +9104,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9025,7 +9121,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9034,7 +9130,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9051,7 +9147,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9060,7 +9156,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9077,7 +9173,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9086,7 +9182,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9103,7 +9199,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9112,7 +9208,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9129,7 +9225,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9138,7 +9234,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9155,7 +9251,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9164,7 +9260,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9181,7 +9277,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9190,7 +9286,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9207,7 +9303,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9216,7 +9312,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9233,7 +9329,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9242,7 +9338,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9259,7 +9355,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9268,7 +9364,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9285,7 +9381,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9294,7 +9390,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9311,7 +9407,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9320,7 +9416,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9337,7 +9433,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9346,7 +9442,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9363,7 +9459,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9372,7 +9468,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9389,7 +9485,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9398,7 +9494,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9415,7 +9511,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9424,7 +9520,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9441,7 +9537,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9450,7 +9546,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9467,7 +9563,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9476,7 +9572,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9493,7 +9589,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9502,7 +9598,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9519,7 +9615,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9528,7 +9624,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9545,7 +9641,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9554,7 +9650,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9571,7 +9667,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9580,7 +9676,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9597,7 +9693,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9606,7 +9702,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9623,7 +9719,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9632,7 +9728,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9649,7 +9745,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9658,7 +9754,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9675,7 +9771,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9684,7 +9780,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9701,7 +9797,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9710,7 +9806,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     },
     {
@@ -9727,7 +9823,7 @@
       "pricing": {
         "status": "unknown",
         "currency": "USD",
-        "effective_at": "2026-06-13T18:48:41.885184852Z",
+        "effective_at": "2026-06-13T19:53:11.545731311Z",
         "missing_dimensions": [
           "input_tokens",
           "output_tokens"
@@ -9736,7 +9832,7 @@
       },
       "provenance": {
         "source": "generated-from-provider-catalog",
-        "observed_at": "2026-06-13T18:48:41.885184852Z"
+        "observed_at": "2026-06-13T19:53:11.545731311Z"
       }
     }
   ],
@@ -9744,6 +9840,7 @@
     "chat-latest": "openai/chat-latest",
     "chatgpt-4o-latest": "openai/chatgpt-4o-latest",
     "claude-fable-5": "anthropic/claude-fable-5",
+    "claude-haiku-4-5": "anthropic/claude-haiku-4-5",
     "claude-haiku-4-5-20251001": "anthropic/claude-haiku-4-5-20251001",
     "claude-mythos-5": "anthropic/claude-mythos-5",
     "claude-opus-4-5-20251101": "anthropic/claude-opus-4-5-20251101",
