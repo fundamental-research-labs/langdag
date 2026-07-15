@@ -46,6 +46,10 @@ func (p *Provider) Name() string {
 func (p *Provider) Models() []types.ModelInfo {
 	st := []string{types.ServerToolWebSearch}
 	return []types.ModelInfo{
+		{ID: "gpt-5.6", Name: "GPT-5.6", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
+		{ID: "gpt-5.6-sol", Name: "GPT-5.6 Sol", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
+		{ID: "gpt-5.6-terra", Name: "GPT-5.6 Terra", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
+		{ID: "gpt-5.6-luna", Name: "GPT-5.6 Luna", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
 		{ID: "gpt-5.5", Name: "GPT-5.5", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
 		{ID: "gpt-5.5-2026-04-23", Name: "GPT-5.5", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},
 		{ID: "gpt-5.5-pro", Name: "GPT-5.5 Pro", ContextWindow: 1050000, MaxOutput: 128000, ServerTools: st},

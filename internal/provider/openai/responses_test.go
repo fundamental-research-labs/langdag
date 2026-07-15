@@ -106,15 +106,18 @@ func TestBuildResponsesRequest_WithTools(t *testing.T) {
 func TestBuildOpenAIResponsesRequest_ReasoningFromThink(t *testing.T) {
 	for _, tc := range []struct {
 		name       string
+		model      string
 		think      bool
 		wantEffort string
 	}{
-		{name: "enabled", think: true, wantEffort: "medium"},
-		{name: "disabled", think: false, wantEffort: "none"},
+		{name: "gpt-5.5 enabled", model: "gpt-5.5", think: true, wantEffort: "medium"},
+		{name: "gpt-5.5 disabled", model: "gpt-5.5", think: false, wantEffort: "none"},
+		{name: "gpt-5.6 enabled", model: "gpt-5.6-sol", think: true, wantEffort: "medium"},
+		{name: "gpt-5.6 disabled", model: "gpt-5.6-sol", think: false, wantEffort: "none"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			req := &types.CompletionRequest{
-				Model: "gpt-5.5",
+				Model: tc.model,
 				Messages: []types.Message{
 					{Role: "user", Content: json.RawMessage(`"Hello"`)},
 				},

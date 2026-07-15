@@ -693,6 +693,31 @@ func TestAzureProviderName(t *testing.T) {
 	}
 }
 
+func TestProviderModelsIncludesGPT56Family(t *testing.T) {
+	want := map[string]string{
+		"gpt-5.6":       "GPT-5.6",
+		"gpt-5.6-sol":   "GPT-5.6 Sol",
+		"gpt-5.6-terra": "GPT-5.6 Terra",
+		"gpt-5.6-luna":  "GPT-5.6 Luna",
+	}
+	for _, model := range New("test-key", "").Models() {
+		name, ok := want[model.ID]
+		if !ok {
+			continue
+		}
+		delete(want, model.ID)
+		if model.Name != name || model.ContextWindow != 1050000 || model.MaxOutput != 128000 {
+			t.Errorf("model = %+v, want name %q and limits 1050000/128000", model, name)
+		}
+		if len(model.ServerTools) != 1 || model.ServerTools[0] != types.ServerToolWebSearch {
+			t.Errorf("%s ServerTools = %v, want web search", model.ID, model.ServerTools)
+		}
+	}
+	for id := range want {
+		t.Errorf("provider model list missing %q", id)
+	}
+}
+
 func TestAzureProviderModels(t *testing.T) {
 	p := NewAzure("test-key", "https://myresource.openai.azure.com", "")
 	models := p.Models()
