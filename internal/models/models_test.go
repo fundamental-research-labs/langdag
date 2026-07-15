@@ -47,6 +47,9 @@ func TestDefaultCatalog_KnownModels(t *testing.T) {
 		wantCtxGt0   bool
 	}{
 		{"gpt-4o-2024-08-06", "openai", true, true},
+		{"gpt-5.6-sol", "openai", true, true},
+		{"gpt-5.6-terra", "openai", true, true},
+		{"gpt-5.6-luna", "openai", true, true},
 		{"grok-4.3", "grok", true, true},
 	}
 

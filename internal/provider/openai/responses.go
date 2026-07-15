@@ -248,7 +248,8 @@ func supportsOpenAIReasoningNone(model string) bool {
 		strings.HasPrefix(model, "gpt-5.2") ||
 		strings.HasPrefix(model, "gpt-5.3") ||
 		strings.HasPrefix(model, "gpt-5.4") ||
-		strings.HasPrefix(model, "gpt-5.5")
+		strings.HasPrefix(model, "gpt-5.5") ||
+		strings.HasPrefix(model, "gpt-5.6")
 }
 
 // convertResponsesMessages converts langdag messages to Responses API input items.

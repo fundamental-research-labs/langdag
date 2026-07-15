@@ -159,6 +159,7 @@ var (
 	openAIMaxOutputRe2 = regexp.MustCompile(`(?i)([\d,]+)\s+max output tokens`)
 	openAITextPriceRe  = regexp.MustCompile(`(?i)Text tokens\s+.*?\bInput\s+\$([\d.]+)(?:\s+Cached input\s+(?:\$[\d.]+|-))?\s+Output\s+\$([\d.]+)`)
 	openAIModelIDRe    = regexp.MustCompile(`\b(?:gpt|o[0-9]|computer-use|chatgpt|chat-latest|codex|babbage|davinci|omni|text)[a-z0-9._-]*\b`)
+	openAIAliasRouteRe = regexp.MustCompile(`(?i)\b([a-z0-9][a-z0-9._-]*)\s+alias routes requests to\b`)
 )
 
 func parseOpenAIModelLinks(html, sourceURL string) []string {
@@ -326,6 +327,14 @@ func parseOpenAITextPrices(text string) (float64, float64) {
 func openAIModelIDsFromDetail(modelID, text string) []string {
 	ids := []string{modelID}
 	seen := map[string]bool{modelID: true}
+	for _, match := range openAIAliasRouteRe.FindAllStringSubmatch(text, -1) {
+		alias := strings.ToLower(match[1])
+		if seen[alias] || !isOpenAIModelSlug(alias) {
+			continue
+		}
+		seen[alias] = true
+		ids = append(ids, alias)
+	}
 
 	section := text
 	if idx := strings.Index(section, "Snapshots"); idx >= 0 {

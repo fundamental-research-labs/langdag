@@ -113,6 +113,7 @@ func TestFetchOpenAIModelsFromDocsPages(t *testing.T) {
 		w.Write([]byte(`<html><body>
 <a href="/api/docs/models/gpt-5.5">GPT-5.5</a>
 <a href="/api/docs/models/gpt-5.5-pro">GPT-5.5 pro</a>
+<a href="/api/docs/models/gpt-5.6-sol">GPT-5.6 Sol</a>
 <a href="/api/docs/models/gpt-image-2">GPT Image 2</a>
 </body></html>`))
 	})
@@ -136,6 +137,18 @@ func TestFetchOpenAIModelsFromDocsPages(t *testing.T) {
 <p>Text tokens</p><p>Per 1M tokens</p>
 <p>Input</p><p>$30.00</p><p>Output</p><p>$180.00</p>
 <h2>Snapshots</h2><p>Snapshots for GPT-5.5 pro.</p><p>gpt-5.5-pro</p><p>gpt-5.5-pro-2026-04-23</p><h2>Rate limits</h2>
+</body></html>`))
+	})
+	mux.HandleFunc("/api/docs/models/gpt-5.6-sol", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<html><body>
+<h1>GPT-5.6 Sol</h1>
+<p>The gpt-5.6 alias routes requests to GPT-5.6 Sol.</p>
+<p>1,050,000 context window</p>
+<p>128,000 max output tokens</p>
+<h2>Pricing</h2>
+<p>Text tokens</p><p>Per 1M tokens</p>
+<p>Input</p><p>$5.00</p><p>Cached input</p><p>$0.50</p><p>Output</p><p>$30.00</p>
+<h2>Snapshots</h2><p>gpt-5.6-sol</p><h2>Rate limits</h2>
 </body></html>`))
 	})
 	mux.HandleFunc("/api/docs/models/gpt-image-2", func(w http.ResponseWriter, r *http.Request) {
@@ -182,6 +195,19 @@ func TestFetchOpenAIModelsFromDocsPages(t *testing.T) {
 	}
 	if _, ok := byID["gpt-5.5-pro-2026-04-23"]; !ok {
 		t.Error("gpt-5.5-pro snapshot not found")
+	}
+	for _, id := range []string{"gpt-5.6", "gpt-5.6-sol"} {
+		m, ok := byID[id]
+		if !ok {
+			t.Errorf("%s not found", id)
+			continue
+		}
+		if m.ContextWindow != 1050000 || m.MaxOutput != 128000 {
+			t.Errorf("%s limits = %d/%d, want 1050000/128000", id, m.ContextWindow, m.MaxOutput)
+		}
+		if m.InputPricePer1M != 5 || m.OutputPricePer1M != 30 {
+			t.Errorf("%s pricing = %f/%f, want 5/30", id, m.InputPricePer1M, m.OutputPricePer1M)
+		}
 	}
 	if _, ok := byID["gpt-image-2"]; ok {
 		t.Error("gpt-image-2 should be skipped without text pricing and context")
